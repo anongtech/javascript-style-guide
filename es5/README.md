@@ -1,4 +1,4 @@
-# Airbnb JavaScript Style Guide() {  
+# Airbnb JavaScript Style Guide() {
 
 *用更合理的方式写 JavaScript*
 
@@ -752,12 +752,12 @@
 
 ## <a name="whitespace">空白</a>
 
-  - 使用 2 个空格作为缩进。
+  - 使用 4 个空格作为缩进。
 
     ```javascript
     // bad
     function() {
-    ∙∙∙∙var name;
+    ∙∙var name;
     }
 
     // bad
@@ -767,7 +767,7 @@
 
     // good
     function() {
-    ∙∙var name;
+    ∙∙∙∙var name;
     }
     ```
 
@@ -1176,14 +1176,14 @@
     this._firstName = 'Panda';
     ```
 
-  - 使用 `_this` 保存 `this` 的引用。
+  - 使用 `self` 保存 `this` 的引用。
 
     ```javascript
     // bad
     function() {
-      var self = this;
+      var _this = this;
       return function() {
-        console.log(self);
+        console.log(_this);
       };
     }
 
@@ -1197,9 +1197,9 @@
 
     // good
     function() {
-      var _this = this;
+      var self = this;
       return function() {
-        console.log(_this);
+        console.log(self);
       };
     }
     ```
